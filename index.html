@@ -1,0 +1,104 @@
+<html>
+  <head>
+  <title>Final Project</title>
+  <style>
+    body{
+      text-align: center;
+      background-image: url("travel.jpg");
+      background-size: cover;
+      border-radius: 50%;
+    }
+    img {
+      max-width: 2000px;
+      max-height: 300px;
+    }
+    input{
+      font-size: 15px;
+      color: deepskyblue;
+      border-color: white;
+      background-color: white;
+      font-family:"Lucida Handwriting", cursive;
+    }
+    input:hover{
+      border-color: deepskyblue;
+    }
+    h2{
+      color: dodgerblue;
+      font-family:"Lucida Handwriting", cursive;
+    }
+    span{
+      font-size: 15px;
+      color: deepskyblue;
+      font-family:"Lucida Handwriting", cursive;
+    }
+  </style>
+  <script>
+    var questionCount = 1;
+    var table = ""
+    function check()
+    {
+      if (questionCount == 1)
+      {
+        var ans = document.getElementById("answer").value;
+        table = table + "Correct Answer: France" + "&nbsp&nbsp&nbsp&nbsp&nbspYour Answer: " + ans;
+        questionCount = questionCount + 1;
+        document.getElementById("picture").innerHTML = "<img src = 'Burj.jpg'>";
+        document.getElementById("answer").value = ""
+
+      }
+      else if (questionCount == 2)
+      {
+        var ans = document.getElementById("answer").value;
+        table = table + "<br>" + "Correct Answer: Dubai" + "&nbsp&nbsp&nbsp&nbsp&nbspYour Answer: " + ans;
+        questionCount = questionCount + 1;
+        document.getElementById("picture").innerHTML = "<img src = 'Colosseum.jfif'>";
+        document.getElementById("answer").value = ""
+      }
+      else if (questionCount == 3)
+      {
+        var ans = document.getElementById("answer").value;
+        table = table + "<br>" + "Correct Answer: Rome" + "&nbsp&nbsp&nbsp&nbsp&nbspYour Answer: " + ans;
+        questionCount = questionCount + 1;
+        document.getElementById("picture").innerHTML = "<img src = 'Taj.jpg'>";
+        document.getElementById("answer").value = ""
+      }
+      else if (questionCount == 4)
+      {
+        var ans = document.getElementById("answer").value;
+        table = table + "<br>" + "Correct Answer: India" + "&nbsp&nbsp&nbsp&nbsp&nbspYour Answer: " + ans;
+        questionCount = questionCount + 1;
+        document.getElementById("picture").innerHTML = "<img src = 'Great.jpg'>";
+        document.getElementById("answer").value = ""
+      }
+      else if (questionCount == 5)
+      {
+        var ans = document.getElementById("answer").value;
+        table = table + "<br>" + "Correct Answer: China" + "&nbsp&nbsp&nbsp&nbsp&nbspYour Answer: " + ans;
+        questionCount = questionCount + 1;
+        end()
+      }
+    }
+    function end()
+      {
+        document.getElementById("answer").value = ""
+        document.getElementById("picture").innerHTML = table;
+        document.getElementById("again").style.visibility = "visible"
+        }
+    function play()
+      {
+        document.getElementById("answer").value = ""
+        document.getElementById("picture").innerHTML = "<img src = 'Eiffel.jpeg'>";
+        questionCount = 1
+        table = "";
+        document.getElementById("again").style.visibility = "hidden"
+      }
+  </script>
+  </head>
+  <body>
+    <h2>Where is that place?</h2>
+    <span id = "picture"><img src= "Eiffel.jpeg" alt="Image not found"></span><br><br>
+    <input type = "text" id = "answer">
+    <input type = "button" value = "Submit" onclick = "check()" id = "button">
+    <input type = "button" value = "Play Again" onclick = "play()" id = "again" style = "visibility:hidden"><br>
+  </body>
+</html>
